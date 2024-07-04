@@ -1,0 +1,287 @@
+:root {
+    --main-color: #00104B;
+    --main-background-color: #F8F8F8;
+    --bright-text: white;
+    --dark-text: black;
+    --regular-text-size: 16px;
+    --title-text-size: 36px;
+    --shadow: 3px 3px 3px 3px lightgray;
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 기본 태그 설정 */
+body {
+    margin: 0px;
+    font-size: var(--regular-text-size); /* 기본 폰트 크기 설정 */
+    font-family: var(--font-family);
+}
+
+p {
+    margin: 0px;
+}
+
+a {
+    color: var(--dark-text);
+    text-decoration: none;
+}
+
+/* 상단 네비게이션 바 */
+nav {
+    top: 0px;
+    position: sticky;
+    color: var(--bright-text);
+    background-color: var(--main-color);
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    list-style: none;
+    padding: 5px;
+    margin: 0px;
+}
+
+nav ul li {
+    font-size: var(--title-text-size);
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* 텍스트 설정 */
+.huge-text {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.regular-bord-text {
+    font-weight: bold;
+}
+
+.title-text {
+    font-size: var(--title-text-size);
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+
+/* 내용박스 */
+.white-round-flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 20px;
+    box-shadow: var(--shadow);
+}
+
+#skill-boxes {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill-box {
+    background-color: white;
+    border-radius: 10px;
+    min-height: 106px;
+    padding: 24px 16px 10px 16px;
+    box-shadow: var(--shadow);
+}
+
+.skill-box ul {
+    margin: 0px;
+    padding-inline-start: 20px;
+}
+
+.project-title {
+    display: flex;
+}
+
+.project-details {
+    width: 50%;
+}
+
+.project-details p {
+    text-align: left;
+}
+
+.project table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.project tr {
+    border-bottom: 1px solid lightgray;
+}
+
+.project th {
+    text-align: left;
+}
+
+.project td {
+    padding: 10px;
+}
+
+.project ul {
+    padding: 1em;
+}
+
+/* 아이콘 */
+.profile-icon {
+    height: 20px;
+}
+
+.skill-icon {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    height: 60px;
+}
+
+.project-icon {
+    height: 80px;
+}
+
+/* 컨테이너 */
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 10% 10px 10%;
+    background-color: var(--main-background-color);
+}
+
+#introduce {
+    display: flex;
+}
+
+#introduce-text {
+    flex-grow: 1;
+}
+
+#introduce-text div {
+    padding: 16px 0px;
+}
+
+#profile-box {
+    display: inline-block;
+    padding: 10px;
+    background-color: white;
+    box-shadow: var(--shadow);
+    width: fit-content;
+    max-width: 360px;
+    height: fit-content;
+}
+
+#profile-text p {
+    padding: 3px;
+}
+
+.project-images {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    width: 100%;
+    gap: 16px;
+}
+
+.image-row img {
+    flex: 1;
+    max-width: 100%;
+    height: auto;
+}
+
+.flex-image-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.flex-image-row img {
+    max-width: 100%;
+}
+
+/* 세부 설정 */
+#profile-image {
+    width: 100%;
+}
+
+
+#smaller-image {
+    width: 40%;
+}
+
+#bigger-image {
+    flex-grow: 0.7;
+}
+
+/* 반응형 레이아웃 */
+@media screen and (max-width: 1024px) {
+    #introduce {
+        flex-direction: column;
+    }
+
+    #profile-box {
+        max-width: 100%;
+    }
+
+    .white-round-flexbox {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-details, .project-images {
+        width: 100%;
+    }
+}
+
+/* 애니메이션 효과 */
+
+.fade-wrap {
+    /* 나타나는 효과가 1초동안 발생 */
+    transition: 1s;
+
+    /* 투명도 0 (안보임) */
+    opacity: 0;
+
+    /* 왼쪽에서 오른쪽으로 나타나게 하기 위함 */
+    position: relative;
+    left: -50px;
+
+    margin-bottom: 20px;
+}
+
+.fade-wrap.fade-in {
+    /* 투명도 0 (보임) */
+    opacity: 1;
+
+    /* 왼쪽에서 오른쪽으로 나타나게 하기 위함 */
+    left: 0;
+}
+
+.nav_menu {
+    color: var(--bright-text);
+}
+
+.nav_menu.active {
+    text-decoration: underline;
+}
