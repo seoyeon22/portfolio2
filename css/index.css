@@ -194,10 +194,12 @@ nav ul li {
     display: flex;
     flex-direction: column;
     width: 50%;
+    justify-content: center;
 }
 
 .image-row {
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     width: 100%;
     gap: 16px;
@@ -232,6 +234,27 @@ nav ul li {
 
 #bigger-image {
     flex-grow: 0.7;
+}
+
+#focusup-video {
+    width: 100%;
+}
+
+#focusup-video video {
+    width: 100%;
+}
+
+#focusup-video-play-button {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+#video-play-button img {
+    width: 30px;
 }
 
 /* 반응형 레이아웃 */
