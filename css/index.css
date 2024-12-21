@@ -222,6 +222,16 @@ nav ul li {
     max-width: 100%;
 }
 
+.projects tr td:first-child {
+    width: 100px; /* 첫 번째 열(제목 열)의 고정 너비 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+  
+.projects tr td:last-child {
+    width: auto; /* 두 번째 열(내용 열)의 가변 너비 */
+    word-wrap: break-word; /* 긴 내용 줄바꿈 */
+}
+
 /* 세부 설정 */
 #profile-image {
     width: 100%;
@@ -258,7 +268,7 @@ nav ul li {
 }
 
 /* 반응형 레이아웃 */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1080px) {
     #introduce {
         flex-direction: column;
     }

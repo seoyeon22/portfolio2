@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         },
         // 화면에서 해당 요소가 10% 이상 보일 경우 화면에 들어온 것으로 판단함
-        { threshold: 0.15 }
+        { threshold: 0.05 }
     );
 
     // 관찰 대상 설정
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(element);
     });
 
-    // 네비게이션 링크 요소들을 가져옵니다.
+    // 네비게이션 링크
     const navLinks = document.querySelectorAll('.nav_menu');
 
     // 각 섹션의 위치를 계산하기 위한 함수
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 스크롤 이벤트 리스너
     window.addEventListener('scroll', () => {
         
-        // 각 섹션을 순회하면서 현재 보이는 섹션을 확인합니다.
+        // 각 섹션을 순회하면서 현재 보이는 섹션을 확인
         navLinks.forEach(link => {
             const section = document.querySelector(link.hash);
             
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // 각 링크에 클릭 이벤트 리스너를 추가하여 해당 섹션으로 스크롤합니다.
+    // 각 링크에 클릭 이벤트 리스너를 추가하여 해당 섹션으로 스크롤
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
