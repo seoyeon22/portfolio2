@@ -118,6 +118,13 @@ nav ul li {
     text-align: left;
 }
 
+.project ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 10px;
+}
+
 .project table {
     border-collapse: collapse;
     width: 100%;
@@ -222,7 +229,7 @@ nav ul li {
     max-width: 100%;
 }
 
-.projects tr td:first-child {
+.project tr td:first-child {
     width: 100px; /* 첫 번째 열(제목 열)의 고정 너비 */
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
